@@ -1,8 +1,10 @@
 const express = require('express')
-const sequelize = require('./db')
+const database = require('./db')
 
 //this is the API server
 const app = express()
+
+database
 
 const port = process.env.PORT || 4000
 
