@@ -1,4 +1,5 @@
 const express = require('express')
+const sequelize = require('./db')
 
 //this is the API server
 const app = express()
