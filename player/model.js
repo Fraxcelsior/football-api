@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
-const team = require('../team/model')
+const Team = require('../team/model')
 
 const Player = db.define(
     'player',
