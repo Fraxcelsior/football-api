@@ -12,6 +12,14 @@ router.get('/team', function (req, res, next) {
         .catch(error => next(error))
 })
 
+router.get('/team/:id', function (req, res, next) {
+    const id =req.params.id
+    Team
+        .findByPk(id)
+        .then(team => res.status(200).json(team))
+        .catch(error => next(error))
+})
+
 router.post('/team', function (req, res) {
     Team
     .create(req.body)
