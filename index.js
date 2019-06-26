@@ -7,7 +7,7 @@ const teamRouter = require('./team/router')
 //this is the API server
 const app = express()
 
-app.use(teamRouter())
+app.use(teamRouter)
 
 const port = process.env.PORT || 4000
 
