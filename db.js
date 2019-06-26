@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize')
 const databaseUrl = 'postgres://postgres:passy@localhost:5432/postgres'
 
-const sequelize = new Sequelize(databaseUrl, { define: { timestamps: false } })
+const sequelize = new Sequelize(databaseUrl)
 
 sequelize.sync()
-    .then(res => console.log("Database schema has been updated", res))
-    .catch(error => console.log(error))
+    .then(() => console.log("Database schema has been updated"))
+    .catch(console.error)
 
 module.exports = sequelize
