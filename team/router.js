@@ -27,7 +27,7 @@ router.post('/team', function (req, res, next) {
         .catch(error => next(error))
 })
 
-router.put('./team/:id', function (req, res, next) {
+router.put('/team/:id', function (req, res, next) {
     const id = req.params.id
     Team
         .findByPk(id)
