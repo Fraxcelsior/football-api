@@ -4,6 +4,7 @@ const teamModel = require('./team/model')
 const playerModel = require('./player/model')
 const teamRouter = require('./team/router')
 const playerRouter = require('./player/router')
+const authenticationRouter = require('./auth/router')
 const bodyParser = require('body-parser')
 
 
@@ -13,6 +14,7 @@ const jsonParser = bodyParser.json()
 app.use(jsonParser)
 app.use(teamRouter)
 app.use(playerRouter)
+app.use(authenticationRouter)
 
 const port = process.env.PORT || 4000
 
