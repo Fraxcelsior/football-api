@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('./db')
-const model = require('./team/model')
+const teamModel = require('./team/model')
+const playerModel = require('./player/model')
 const teamRouter = require('./team/router')
 const bodyParser = require('body-parser')
 
