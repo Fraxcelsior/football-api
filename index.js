@@ -2,11 +2,12 @@ const express = require('express')
 const db = require('./db')
 const model = require('./team/model')
 const teamRouter = require('./team/router')
-const jsonParser = bodyParser.json()
+const bodyParser = require('body-parser')
+
 
 //this is the API server
 const app = express()
-
+const jsonParser = bodyParser.json()
 app.use(jsonParser)
 app.use(teamRouter)
 
