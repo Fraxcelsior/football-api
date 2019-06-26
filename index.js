@@ -1,5 +1,7 @@
 const express = require('express')
-const database = require('./db')
+const db = require('./db')
+const model =require('./team/model')
+
 
 //this is the API server
 const app = express()
