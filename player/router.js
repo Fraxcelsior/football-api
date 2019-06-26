@@ -20,7 +20,7 @@ router.get('/player/:id', function (req, res, next) {
         .catch(error => next(error))
 })
 
-router.post('/player', function (req, res, next) {
+router.post('/player/', function (req, res, next) {
     Player
         .create(req.body)
         .then(player => { res.status(201).json(player) })
