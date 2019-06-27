@@ -3,7 +3,7 @@ const User = require('./model')
 
 const router = new Router()
 
-router.post('/player/', function (req, res, next) {
+router.post('/user/', function (req, res, next) {
     User
         .create(req.body)
         .then(user => { res.status(201).send(user) })
