@@ -15,8 +15,8 @@ const jsonParser = bodyParser.json()
 app.use(jsonParser)
 app.use(teamRouter)
 app.use(playerRouter)
-app.use(authenticationRouter)
 app.use(userRouter)
+app.use(authenticationRouter)
 
 const port = process.env.PORT || 4000
 

@@ -9,3 +9,6 @@ router.post('/user/', function (req, res, next) {
         .then(user => { res.status(201).send(user) })
         .catch(error => next(error))
 })
+
+
+module.exports = router
