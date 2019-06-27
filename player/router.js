@@ -4,11 +4,19 @@ const Team = require('../team/model')
 
 const router = new Router()
 
-router.get('/player/', function (req, res, next) {
+router.get('/player/', (req, res, next) => {
+    const limit = req.query.limit || 25
+    const offset = req.query.offset || 0
+
+    Promise.all([
     Player
-        .findAll()
+        .count(),
+    Player
+        .findAll({
+            limit, offset
+        })])
         .then(players => {
-            res.status(201).json({ players })
+            res.status(200).json({ players })
         })
         .catch(error => next(error))
 })
