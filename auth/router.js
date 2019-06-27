@@ -1,11 +1,13 @@
 const { Router } = require('express')
+const bcrypt = require('bcrypt')
 const { toJWT } = require('./wt')
 const { toData } = require('./wt')
+const User = require('../user/model')
 const router = new Router()
 
 
 router.post('/logins', function (req, res, next) {
-    const emails = req.body.emails
+    const emails = req.body.email
     const password = req.body.password
 
     if (!emails || !password) {
@@ -30,7 +32,7 @@ router.post('/logins', function (req, res, next) {
                 //2. use bcrypt.compareSync to check pw against stored hash
                 if (bcrypt.compareSync(req.body.password, entity.password)) {
                     //3. if pw is correct, return JWT with userId of user (user.id)
-                    releaseEvents.send({
+                    res.send({
                         jwt: toJWT({ userId: entity.id })
                     })
                 }
